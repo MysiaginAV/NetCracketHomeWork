@@ -1,0 +1,4 @@
+---
+# handlers file for deploy_website
+- name: Restart Httpd
+  service: name=httpd state=restarted

@@ -1,0 +1,7 @@
+---
+- name: Install Minecraft
+  hosts: Webserver
+  become: yes
+  
+  roles:
+   - deploy_website

@@ -1,0 +1,40 @@
+---
+# tasks file for install_minecraft
+- name: Add user
+  ansible.builtin.user:
+   name: minecraftuser
+   comment: MineCraft user
+   groups: wheel
+   password: minecraftuser
+   
+- name: Install Java
+  yum:
+   name: java-1.6.0-openjdk
+   state: present
+
+- name: Install Wget
+  yum:
+   name: wget
+   state: latest
+   
+- name: Create a directory
+  ansible.builtin.file:
+    path: /var/minecraft/
+    state: directory
+    mode: '0777'
+
+- name: Wget minecraft server
+  ansible.builtin.shell: wget -O minecraft_server.jar https://s3.amazonaws.com/Minecraft.Download/versions/1.11.2/minecraft_server.1.11.2.jar 
+  args:
+    chdir: /var/minecraft
+
+- name: Changing perm of minecraft_server, adding "+x"
+  file: dest=/var/minecraft/minecraft_server.jar mode=a+x  
+  
+- name: Run server
+  shell: java -Xmx1024M -Xms1024M -jar minecraft_server.1.11.2.jar nogui
+  args: 
+     chdir: /var/minecraft
+  become: yes
+  become_user: minecraftuser      
+                     

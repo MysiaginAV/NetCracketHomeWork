@@ -1,0 +1,3 @@
+---
+# defaults file for deploy_website
+dst_folder: /var/www/html

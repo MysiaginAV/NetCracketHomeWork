@@ -1,0 +1,15 @@
+---
+# tasks file for deploy_website
+- name: Install Apache
+  yum: name=httpd state=latest
+
+- name: Open 80 port
+  ansible.builtin.shell: firewall-cmd --zone=public --add-service=http
+  
+- name: Startet and Autorun
+  service: name=httpd state=started enabled=yes
+  
+- name: generate index.html
+  template: src=index.j2 dest={{ dst_folder }}/index.html mode=0555
+  notify:
+   - Restart Httpd    

@@ -1,0 +1,7 @@
+---
+- name: Install Httpd and generate site
+  hosts: all
+  become: yes
+  
+  roles:
+   - deploy_website
