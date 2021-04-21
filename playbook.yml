@@ -3,5 +3,7 @@
   hosts: webserver01
   become: yes
   
+  debug: 
+  msg: "{{ lgn }}   {{ pwd }}"
   roles:
    - deploy_website
