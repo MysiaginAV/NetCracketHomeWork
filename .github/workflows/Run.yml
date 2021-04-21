@@ -14,11 +14,11 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    env:
-      lgn: ${{ secrets.login }}
-      pwd: ${{ secrets.password }}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+        env:
+          lgn: ${{ secrets.login }}
+          pwd: ${{ secrets.password }}
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       # Runs a single command using the runners shell
