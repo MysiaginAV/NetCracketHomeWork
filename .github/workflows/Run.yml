@@ -15,8 +15,8 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     env:
-      lgn: "{{ lookup('env','login') }}"
-      pwd: "{{ lookup('env','password') }}"
+      lgn: ${{ secrets.login }}
+      pwd: ${{ secrets.password }}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
