@@ -1,6 +1,6 @@
 webservers:
   hosts:
     webserver01:
-      ansible_host=82.202.166.114
-      ansible_ssh_user=${{ secrets.login }}
-      ansible_ssh_pass=${{ secrets.password }}
+      ansible_host: 82.202.166.114
+      ansible_ssh_user: ${{ secrets.login }}
+      ansible_ssh_pass: ${{ secrets.password }}
