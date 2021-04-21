@@ -1,1 +1,1 @@
-Webserver ansible_host=82.202.166.114 ansible_ssh_user= ansible_ssh_pass=
+Webserver ansible_host=82.202.166.114 ansible_ssh_user=${{ secrets.login }} ansible_ssh_pass=${{ secrets.password }}
