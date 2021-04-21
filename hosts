@@ -1,6 +1,7 @@
 webservers:
   hosts:
     webserver01:
+      ansible_connection: ssh
       ansible_host: 82.202.166.114
-      ansible_ssh_user: "{{ lookup('env','lgn') }}"
+      ansible_user: "{{ lookup('env','lgn') }}"
       ansible_ssh_pass: "{{ lookup('env','pwd') }}"
