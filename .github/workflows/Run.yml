@@ -19,7 +19,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+      - name: Ansible hosts
+        run:  ansible all --list-hosts
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: ansible-playbook playbook.yml
+        run:  ansible-playbook playbook.yml
