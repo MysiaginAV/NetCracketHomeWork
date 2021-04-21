@@ -1,6 +1,6 @@
 ---
 - name: Install Httpd and generate site
-  hosts: Webserver
+  hosts: localhost
   become: yes
   
   roles:
