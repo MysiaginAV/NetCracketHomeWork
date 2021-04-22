@@ -23,7 +23,7 @@ jobs:
           DO_SSH_KEY: ${{ secrets.SSH_KEY }}
         run: |
          mkdir .ssh
-         echo "$SSH_KEY" > .ssh/ansible
+         echo "$DO_SSH_KEY" > .ssh/ansible
          chmod 600 .ssh/ansible
          pwd
          cat .ssh/ansible
