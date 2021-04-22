@@ -19,7 +19,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: set ansible config secrets
-          env:
+        env:
           DO_SSH_KEY: ${{ secrets.SSH_KEY }}
         run: |
         mkdir .ssh
