@@ -18,6 +18,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - name: set ansible config secrets
+      env:
+        DO_SSH_KEY: ${{ secrets.SSH_KEY }}
+      run: |
+        mkdir .ssh
+        echo "$SSH_KEY" > .ssh/ansible
+        chmod 600 .ssh/ansible
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run:  ansible-playbook -vvv playbook.yml
+      - name: Run playbook
+        run:  ansible-playbook playbook.yml
