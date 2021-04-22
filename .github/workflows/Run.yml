@@ -25,8 +25,7 @@ jobs:
          mkdir .ssh
          echo "$SSH_KEY" > .ssh/ansible
          chmod 600 .ssh/ansible
-         pwd
-         ls -la
+         cat .ssh/ansible
       # Runs a single command using the runners shell
       - name: Run playbook
         run:  ansible-playbook playbook.yml
