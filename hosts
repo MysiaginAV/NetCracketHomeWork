@@ -4,4 +4,4 @@ webservers:
       ansible_connection: ssh
       ansible_host: 82.202.166.114
       ansible_user: root
-      ansible_ssh_private_key_file: /.ssh/ansible 
+      ansible_ssh_private_key_file: /home/runner/work/NetCracketHomeWork/NetCracketHomeWork/.ssh/ansible 
