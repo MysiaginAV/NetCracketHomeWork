@@ -22,9 +22,9 @@ jobs:
         env:
           DO_SSH_KEY: ${{ secrets.SSH_KEY }}
         run: |
-        mkdir .ssh
-        echo "$SSH_KEY" > .ssh/ansible
-        chmod 600 .ssh/ansible
+         mkdir .ssh
+         echo "$SSH_KEY" > .ssh/ansible
+         chmod 600 .ssh/ansible
       # Runs a single command using the runners shell
       - name: Run playbook
         run:  ansible-playbook playbook.yml
